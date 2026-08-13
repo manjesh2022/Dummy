@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manjesh M | Live Projects</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      background-color: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--border);
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Project Hub</h1>
+    <p>A collection of web applications, tools, and interactive platforms.</p>
+  </header>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+    <button class="filter-btn" onclick="filterProjects('games')">Games</button>
+    <button class="filter-btn" onclick="filterProjects('utilities')">Utilities</button>
+    <button class="filter-btn" onclick="filterProjects('web')">Web & Apps</button>
+  </div>
+
+  <main class="grid" id="project-grid">
+
+    <!-- Games -->
+    <div class="card" data-category="games">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">♟️ Chess</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">Interactive chess platform featuring local 2-player games, Stockfish AI engine, automated Bot vs. Bot simulation, and match timer.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/Chess/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/Chess" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="games">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">⭕ XOX</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">Modern Tic-Tac-Toe web application featuring a score-based series system (first to 5 points), round proof logs, and color highlights.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/XOX/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/XOX" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="games">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">🔴 Ali Guli Mane</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">Traditional South Indian board game built using pure JS. Features dynamic sowing animations, turn highlights, and automated score tracking.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/AliGuliMane/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/AliGuliMane" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <!-- Utilities -->
+    <div class="card" data-category="utilities">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">🏋️‍♂️ Gym Tracker</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">Personal fitness and workout tracking web utility built to log exercises, sets, and progress over time.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/GymTracker/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/GymTracker" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="utilities">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">🎬 TV Show Tracker</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">Responsive web application to track TV show progress, manage episodes, and save watch status locally.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/TVShowTracker/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/TVShowTracker" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="utilities">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">🧰 My Cool Apps</h2>
+          <span class="badge">2026</span>
+        </div>
+        <p class="card-desc">A collection of useful web utilities, tools, and mini-applications built using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/MyCoolApps/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/MyCoolApps" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <!-- Web & Apps -->
+    <div class="card" data-category="web">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">📸 My Clicks</h2>
+          <span class="badge">2024</span>
+        </div>
+        <p class="card-desc">Responsive photography gallery showcasing curated clicks and visual work using HTML, CSS, and JS.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/MyClicks/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/MyClicks" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="web">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">🎓 Admission Portal</h2>
+          <span class="badge">2023</span>
+        </div>
+        <p class="card-desc">A multi-page college admission portal website designed with structured layout and responsive forms.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/AOS/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/AOS" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="web">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">👨‍💻 About Me</h2>
+          <span class="badge">2022</span>
+        </div>
+        <p class="card-desc">Personal website introducing myself, core skills, and background information.</p>
+      </div>
+      <div class="card-actions">
+        <a href="https://manjesh2022.github.io/manjesh/" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/manjesh2022/manjesh" target="_blank" class="btn btn-secondary">Code</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© Manjesh M • Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      // Update active button styling
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
