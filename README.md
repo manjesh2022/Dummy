@@ -1,6 +1,4 @@
-# Dummy
-
-## 🚀 Projects
+# Dummy : 🚀 Projects
 
 
 ### 25. 🔗 Links *(2026)*
